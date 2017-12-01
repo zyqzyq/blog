@@ -257,6 +257,5 @@ def search(request):
 def about(request):
     return render(request, 'blog/about.html')
 
-
-def contact(request):
-    return render(request, 'blog/contact.html')
+def full_width(request):
+    return render(request, 'blog/full-width.html')

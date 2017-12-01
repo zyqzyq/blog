@@ -1,8 +1,9 @@
 {% load staticfiles %}
+{% load blog_tags %}
 <!DOCTYPE html>
 <html>
-	<head>
-    <title>zyqzyq &amp; blog</title>
+<head>
+    <title>足迹</title>
 
     <!-- meta -->
     <meta charset="UTF-8">
@@ -28,13 +29,13 @@
     </style>
 </head>
 
-	<body id="page">
-		<div class="container">
+<body>
+<div class="container">
     <header id="site-header">
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1><a href="{% url 'blog:index' %}"><b>个人小站</b></a></h1>
+                    <h1><a href="{% url 'blog:index' %}"><b>码路上的痕迹</b></a></h1>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
@@ -48,9 +49,9 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="博客">博客</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:full' %}" data-hover="博客">博客</a></li>
                             <li class="cl-effect-11"><a href="{% url 'blog:about' %}" data-hover="关于">关于</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'blog:contact' %}" data-hover="联系">联系</a></li>
+{#                            <li class="cl-effect-11"><a href="{% url 'blog:contact' %}" data-hover="联系">联系</a></li>#}
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -67,56 +68,39 @@
         </div>
     </header>
 </div>
-		<div class="content-body">
-			<div class="container">
-				<div class="row">
-					<main class="col-md-12">
-						<h1 class="page-title">相关链接</h1>
-						<article class="post">
-							<div class="entry-content clearfix">
-                                <ul>
-                                    <li><a href="https://github.com/zyqzyq">github</a></li>
-                                    <li><a href="http://blog.csdn.net/qq_32783353">CSDN</a></li>
-                                    <li><a href="http://www.jianshu.com/u/26c4c5b7135b">简书</a></li>
-                                </ul>
-                                <div class="height-40px"></div>
-								<h2 class="title text-center">Social</h2>
-								<ul class="social">
-									<li class="facebook"><a href="#"><span class="ion-social-facebook"></span></a></li>
-									<li class="twitter"><a href="#"><span class="ion-social-twitter"></span></a></li>
-									<li class="google-plus"><a href="#"><span class="ion-social-googleplus"></span></a></li>
-									<li class="tumblr"><a href="#"><span class="ion-social-tumblr"></span></a></li>
-								</ul>
-							</div>
-						</article>
-					</main>
-				</div>
-			</div>
-		</div>
-		<footer id="site-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<p class="copyright">&copy; 2017 xxx.com</p>
-					</div>
-				</div>
-			</div>
-		</footer>
 
-		<!-- Mobile Menu -->
-	<div class="overlay overlay-hugeinc">
-        <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
-        <nav>
-            <ul>
-                <li><a href="{% url 'blog:index' %}">首页</a></li>
-                <li><a href="{% url 'blog:index' %}">博客</a></li>
-                <li><a href="{% url 'blog:about' %}">关于</a></li>
-                <li><a href="{% url 'blog:contact' %}">联系</a></li>
-            </ul>
-        </nav>
+<div class="content-body">
+    {% block body %}
+    {% endblock body %}
+</div>
+<footer id="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="copyright">&copy; 2017 zyqzyq.pythonanywhere.com
+                    -More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
+                    - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+                    - Learning from <a href="http://zmrenwu.com/post/2/" title="网页模板" target="_blank"> 追梦人物的博客 </a>
+                </p>
+            </div>
+        </div>
     </div>
+</footer>
 
-        <script src="{% static 'blog/js/script.js' %}"></script>
-		
-	</body>
+<!-- Mobile Menu -->
+<div class="overlay overlay-hugeinc">
+    <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
+    <nav>
+        <ul>
+            <li><a href="{% url 'blog:index' %}">首页</a></li>
+            <li><a href="{% url 'blog:full' %}">博客</a></li>
+            <li><a href="{% url 'blog:about' %}">关于</a></li>
+{#            <li><a href="{% url 'blog:contact' %}">相关链接</a></li>#}
+        </ul>
+    </nav>
+</div>
+
+<script src="{% static 'blog/js/script.js' %}"></script>
+
+</body>
 </html>
