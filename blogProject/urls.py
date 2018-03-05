@@ -13,12 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+import xadmin
 from django.conf.urls import url, include
-from django.contrib import admin
 from blog.feeds import AllPostRssFeed
+from xadmin.plugins import xversion
 
+xversion.register_models()
+xadmin.autodiscover()
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', xadmin.site.urls),
     url(r'', include('blog.urls')),
     url(r'', include('comments.urls')),
     url(r'^all/rss/$', AllPostRssFeed(), name='rss'),

@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'blog',
     'comments',
     'pagedown',
-    'markdown_deux'
+    'markdown_deux',
+    'xadmin',
+    'crispy_forms',
+    'reversion',
 ]
 
 MIDDLEWARE = [
