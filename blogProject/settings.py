@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@e727*u2#)@gj^mvdj(8bcyqydjdzy^+!_+k@!n$+pfwh9c^8w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.3.12', "127.0.0.1", "zyqzyq.pythonanywhere.com"]
 
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'haystack',
     'blog',
     'comments',
+    'pagedown',
+    'markdown_deux'
 ]
 
 MIDDLEWARE = [
