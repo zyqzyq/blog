@@ -4,3 +4,4 @@ whoosh_index
 blog/migrations/
 comments/migrations/
 xadmin/migrations/
+static/

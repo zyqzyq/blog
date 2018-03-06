@@ -22,12 +22,13 @@
     <script src="{% static 'blog/js/pace.min.js' %}"></script>
     <script src="{% static 'blog/js/modernizr.custom.js' %}"></script>
 
-    <style>
-        span.highlighted {
-            color: red;
-        }
-    </style>
+
+{#    代码高亮#}
+    <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css">
+    <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
+
 
 <body>
 <div class="container">

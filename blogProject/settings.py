@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'blog',
     'comments',
     'pagedown',
-    'markdown_deux',
     'xadmin',
     'crispy_forms',
     'reversion',
@@ -135,3 +134,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
